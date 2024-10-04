@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded",function(){
   let users=JSON.parse(localStorage.getItem("systemUsers"))||[]  
-if (window.location.pathname === './signup.html') {
+if (window.location.pathname === '/signUp.html') {
+  console.log("sigin up");
+  
  const username=document.getElementById("username");
  const usermail=document.getElementById("usermail");
  const userpassword=document.getElementById("userpassword");
@@ -19,6 +21,7 @@ let users=JSON.parse(localStorage.getItem("systemUsers"))||[]
     allrequird.classList.add("d-none")
   }
   else if(username.value ==="" || usermail.value=="" || userpassword.value ===""){
+  
     exist.classList.add("d-none")
     success.classList.add("d-none")
     allrequird.classList.remove("d-none")
@@ -50,9 +53,9 @@ let users=JSON.parse(localStorage.getItem("systemUsers"))||[]
   return exist;
  }
 } 
-else if (window.location.pathname === './login.html') {
+else if (window.location.pathname === '/index.html') {
 (function (){
-  console.log(users);
+  console.log("login");
   
   const loginEmail=document.getElementById("loginEmail");
   const loginPassword=document.getElementById("loginPassword");
@@ -64,7 +67,7 @@ else if (window.location.pathname === './login.html') {
     if(found){
       incorrect.classList.add("d-none")
       localStorage.setItem("loggedInUser",found.name); 
-      window.location.pathname="./welcome.html"
+      window.location.pathname="/welcome.html"
     }else{
     incorrect.classList.remove("d-none")
      
@@ -82,11 +85,11 @@ else if (window.location.pathname === './login.html') {
 
  
 })()
-}else if(window.location.pathname==='./welcome.html'){
+}else if(window.location.pathname==='/welcome.html'){
 
   let logout=document.querySelector("#logout");
   logout.addEventListener("click",function(){
-    window.location.href="./login.html"
+    window.location.href="/index.html"
   })
   let welcomeUser = document.querySelector(".welcomeUser");
   let loggedInUser = localStorage.getItem("loggedInUser");
