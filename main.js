@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded",function(){
   let users=JSON.parse(localStorage.getItem("systemUsers"))||[]  
-if (window.location.pathname === '/signup.html') {
+if (window.location.pathname === './signup.html') {
  const username=document.getElementById("username");
  const usermail=document.getElementById("usermail");
  const userpassword=document.getElementById("userpassword");
@@ -50,7 +50,7 @@ let users=JSON.parse(localStorage.getItem("systemUsers"))||[]
   return exist;
  }
 } 
-else if (window.location.pathname === '/login.html') {
+else if (window.location.pathname === './login.html') {
 (function (){
   console.log(users);
   
@@ -64,7 +64,7 @@ else if (window.location.pathname === '/login.html') {
     if(found){
       incorrect.classList.add("d-none")
       localStorage.setItem("loggedInUser",found.name); 
-      window.location.pathname="/welcome.html"
+      window.location.pathname="./welcome.html"
     }else{
     incorrect.classList.remove("d-none")
      
@@ -82,11 +82,11 @@ else if (window.location.pathname === '/login.html') {
 
  
 })()
-}else if(window.location.pathname==='/welcome.html'){
+}else if(window.location.pathname==='./welcome.html'){
 
   let logout=document.querySelector("#logout");
   logout.addEventListener("click",function(){
-    window.location.href="/login.html"
+    window.location.href="./login.html"
   })
   let welcomeUser = document.querySelector(".welcomeUser");
   let loggedInUser = localStorage.getItem("loggedInUser");
