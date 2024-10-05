@@ -9,7 +9,7 @@ function gotowelcome(){
   if(found){
     incorrect.classList.add("d-none")
     localStorage.setItem("loggedInUser",found.name); 
-    location.href="../welcome.html"
+    location.href="/welcome.html"
   }else{
   incorrect.classList.remove("d-none")
    
